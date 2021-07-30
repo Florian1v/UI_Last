@@ -32,6 +32,9 @@
           <li>
             <router-link router-link to="/doc/input">Input 组件</router-link>
           </li>
+          <li>
+            <router-link router-link to="/doc/continued">未完待续</router-link>
+          </li>
         </ol>
       </aside>
       <main>
