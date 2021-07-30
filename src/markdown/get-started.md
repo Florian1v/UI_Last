@@ -26,3 +26,5 @@ export default {
 }
 </script>
 ```
+### 补充说明
+更新暂未发布到npm

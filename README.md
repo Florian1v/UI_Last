@@ -1,4 +1,4 @@
-# Gulu UI for Vue 3
+# Bamboo UI for Vue 3
 
 ## 运行步骤
 
@@ -16,3 +16,6 @@
 
 1. 运行 rollup -c
 2. 得到的 dist/lib 目录就是编译后的库文件所在目录
+
+### 说明
+暂时没发布到npm
