@@ -1,61 +1,51 @@
 <template>
   <div class="z-input">
     <input
-      class="z-input_inner"
-      :class="{ 'is-disabled': disabled }"
-      :type="type"
+      class="z-input__inner"
       :placeholder="placeholder"
-      :name="name"
-      :disabled="disabled"
+      :class="{ 'is-disabled': disabled }"
       :value="value"
       @input="handleInput"
     />
   </div>
 </template>
-
 <script lang="ts">
+import { ref, SetupContext } from "vue";
+declare const props: { value: boolean };
+declare const context: SetupContext;
 export default {
-  name: "Input",
-  props:{
-    palceholder:{
-      type:String,
-      default:''
+  props: {
+    placeholder: {
+      type: String,
+      default: "",
     },
-    type:{
-      type:String,
-      default:''
+    disabled: {
+      type: Boolean,
+      default: false,
     },
-    name:{
-      type:String,
-      default:''
+    value: {
+      type: String,
+      default: "",
     },
-    disabled:{
-      type:String,
-      default:''
-    },
-    value:{
-      type:String,
-      default:''
-    }
   },
-  setup:(props,context){
+
+  setup(props, context) {
     const handleInput = (e) => {
-      context.emit('update:value',e.target.value)
-    }
-    return {handleInput}
-  }
+      context.emit("update:value", e.target.value);
+    };
+    return { handleInput };
+  },
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .z-input {
   position: relative;
   font-size: 14px;
   display: inline-block;
-
-  .z-input_inner {
+  .z-input__inner {
     display: inline-block;
-    background: #fff;
+    background-color: #fff;
     border-radius: 4px;
     border: 1px solid #dcdfe6;
     box-sizing: border-box;
@@ -65,13 +55,11 @@ export default {
     line-height: 40px;
     outline: none;
     padding: 0 15px;
-    transition: border-color 0.25s
-      cubic-bezier(cubic-bezier(0.645, 0.045, 0.355, 1));
+    transition: border-color 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
     width: 100%;
-
     &:focus {
       outline: none;
-      border-color: #485c74;
+      border-color: #485fc7;
     }
     &.is-disabled {
       background-color: #f5f7fa;
